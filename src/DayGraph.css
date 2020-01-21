@@ -1,0 +1,35 @@
+.daygraph--container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background: rgb(3, 39, 68);
+  height: 3px;
+  margin: 0 0;
+}
+
+.daygraph--daytime {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgb(165, 106, 4);
+  transform-origin: 0.5;
+  transition: .3s ease-in-out;
+}
+ .daygraph--daytime:hover {
+   background: goldenrod;
+ }
+
+ .daygraph--sunset {
+  position: absolute;
+  background: white;
+  height: 40px;
+  width: 1px;
+  bottom: -10px;
+ }
+
+ .daygraph--indicator--time {
+   position: absolute;
+   bottom: -10px;
+   color: white;
+   font-size: 10px;
+ }
