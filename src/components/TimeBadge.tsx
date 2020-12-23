@@ -30,24 +30,24 @@ const Wrapper = styled.div`
   box-shadow: 0 1px 4px 0 rgba(180,180,180,0.50);
   border-radius: 11px;
   font-family: Roboto-Regular;
-  font-size: 12px;
+  font-size: 14px;
 `;
 
 const Title = styled.span`
   font-family: Roboto-Thin;
-  font-size: 12px;
+  font-size: 14px;
   color: #000000;
 `;
 
 const Value = styled.span`
   font-family: Roboto-Regular;
-  font-size: 16px;
+  font-size: 20px;
   color: #000000;
 `;
 
 const SubValue = styled.span`
 opacity: 0.4;
 font-family: Roboto-Regular;
-font-size: 10px;
+font-size: 14px;
 color: ${COLORS.blue};
 `

@@ -1,4 +1,4 @@
-import { observable, computed } from 'mobx'
+import { observable, computed, action, runInAction } from 'mobx'
 import { PartialCoordinates, HALF_LIST_LENGTH } from './constants'
 import { DEFAULT_LOCATION } from './constants';
 import SunCalc from 'suncalc';
@@ -9,6 +9,20 @@ export const DAY_IN_MS = 24 * 60 * 60 * 1000;
 class Store {
   @observable location: PartialCoordinates = DEFAULT_LOCATION
   @observable selectedDate: Date = new Date()
+  @observable locationName: string = 'unknown';
+
+  @action
+  getLocationName() {  
+    runInAction(() => {
+      this.locationName = 'searching...'
+  })
+    fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${this.location.latitude}&longitude=${this.location.longitude}&localityLanguage=en`)
+    .then(r => r.json())
+    .then(r => runInAction(() => {
+      this.locationName = r.city 
+  }))
+  }
+  
 
   @computed get visibleScrollDates() {
     const resultArray = []

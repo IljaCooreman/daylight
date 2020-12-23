@@ -26,7 +26,7 @@ const TodayMetrics: React.SFC = () => {
             sToMinutesSeconds(dayLength).toString(
               { hours: true, minutes: true, seconds: false, direction: false }
             )}
-          subValue={sToMinutesSeconds(dayLengthDelta).toString({})}
+          subValue={`${sToMinutesSeconds(Math.abs(dayLengthDelta)).toString({})} ${dayLengthDelta > 0 ? 'shorter' : 'longer'} than yesterday`}
         />
         <TimeBadge
           title={'Sunset'}

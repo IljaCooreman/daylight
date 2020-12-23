@@ -40,14 +40,14 @@ const Container = styled.div`
 
 const Duration = styled.span`
   font-family: Roboto-Thin;
-  font-size: 10px;
+  font-size: 14px;
   color: #000000;
   margin: 4px;
 `;
 
 const Time = styled.span`
   font-family: Roboto-Regular;
-  font-size: 12px;
+  font-size: 16px;
   color: #000000;
   margin: 4px;
 `;

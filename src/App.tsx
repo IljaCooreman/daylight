@@ -3,6 +3,7 @@ import './App.css';
 import { observer } from 'mobx-react';
 import { store } from './store';
 import TodayMetrics from './components/TodayMetrics';
+import DayGraph from './DayGraph';
 
 
 const App: React.FC = observer(() => {
@@ -19,17 +20,21 @@ const App: React.FC = observer(() => {
   navigator.geolocation.getCurrentPosition(handleLocationSuccess, handleLocationError, { timeout: 5000 })
 
   useEffect(() => {
+    store.getLocationName();
   }, [location])
 
   return (
     <div className="App">
-      {/* <div style={{ width: '100%' }}>
+      <div style={{ width: '100%' }}>
         {
           sunTimes.map(timings => (
-            <DayGraph timings={timings} />
+            <DayGraph timings={timings} key={String(timings.date)} />
           ))
         }
-      </div> */}
+      </div>
+      <div>
+        location: {store.locationName}
+      </div>
       <TodayMetrics />
     </div>
   );

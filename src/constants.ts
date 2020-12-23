@@ -1,13 +1,15 @@
-export interface PartialCoordinates extends Partial<Coordinates> {
+
+
+export interface PartialCoordinates {
   latitude: number,
   longitude: number,
 }
 export type UnixTime = number;
-export const DEFAULT_LOCATION: PartialCoordinates = { latitude: 0, longitude: 0 }
+export const DEFAULT_LOCATION: PartialCoordinates = { latitude: 0, longitude: 0}
 
 export const MS_IN_A_DAY = 1000 * 60 * 60 * 24
 
-export const HALF_LIST_LENGTH = 180
+export const HALF_LIST_LENGTH = 7
 
 export enum COLORS {
   orange = '#F4C342',
@@ -16,12 +18,12 @@ export enum COLORS {
   blue = '#2D5488',
 }
 
-interface Phase {
+export interface Phase {
   color: COLORS,
   name: string,
 }
 
-enum Phases {
+export enum Phases {
   dusk,
   sunrise,
   dawn,
